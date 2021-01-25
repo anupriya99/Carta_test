@@ -1,0 +1,5 @@
+.idea/
+data_manager.sql
+docker-compose.yml
+Dockerfile
+database.db

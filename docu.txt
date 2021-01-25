@@ -1,0 +1,130 @@
+
+######################################
+set your database settings under .env file 
+python3 app.py [App start ]
+pip3 install -r requirements.txt [install Packages]
+###################################
+
+url: "/api/dm/login" 
+	methods:["POST"]
+	post:
+		inputs:
+			username:johnsmith
+			password:Welcome123$
+		return:
+			{
+		    "resp": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImpvaG5zbWl0aCIsImV4cCI6MTYxMTUwMTA4Nn0.x9xNFW0S_68-a98UzVfvtHlJdfDw7o7O3MsTyesKYQs"
+			}
+
+url: "/api/dm/datafiles"
+	methods:["GET", "POST"]
+	get: token required 
+		inputs:
+			---------
+		return:
+			[
+		    	{
+		        "id": 1,
+		        "data_file_name": "test"
+		    	},
+
+			]
+	post:token required
+		inputs:
+			data_file:[Upload your file]
+		return:
+			{
+			    "id": 8,
+			    "data_file_name": "dataset.xlsx"
+			}
+
+
+
+url: "/api/dm/datafiles/<int:data_id>" 
+	 "/api/dm/datafiles/8" 
+	methods:["GET", ]
+	get: token required 
+		inputs:
+			---------
+		return:
+			[
+			    {
+			        "variable_name": "Total assets",
+			        "units": "Dollars (millions)",
+			        "industry_code_nzsioc": "BB",
+			        "data_year": 2021,
+			        "created_time": "2021-01-23 15:53:23.806312",
+			        "industry_code_anzsic06": "ANZSIC06 division B",
+			        "variable_category": "Financial position",
+			        "variable_code": "H24",
+			        "industry_name_nzsioc": "Mining",
+			        "industry_aggregation_nzsioc": "Level 1",
+			        "id": 136010,
+			        "user_data_id": 8,
+			        "data_value": 19302
+			    },
+			    {
+			        "variable_name": "Current assets",
+			        "units": "Dollars (millions)",
+			        "industry_code_nzsioc": "BB",
+			        "data_year": 2021,
+			        "created_time": "2021-01-23 15:53:23.806315",
+			        "industry_code_anzsic06": "ANZSIC06 division B",
+			        "variable_category": "Financial position",
+			        "variable_code": "H25",
+			        "industry_name_nzsioc": "Mining",
+			        "industry_aggregation_nzsioc": "Level 1",
+			        "id": 136011,
+			        "user_data_id": 8,
+			        "data_value": 4926
+			    },
+			    {
+			        "variable_name": "Fixed tangible assets",
+			        "units": "Dollars (millions)",
+			        "industry_code_nzsioc": "BB",
+			        "data_year": 2021,
+			        "created_time": "2021-01-23 15:53:23.806318",
+			        "industry_code_anzsic06": "ANZSIC06 division B",
+			        "variable_category": "Financial position",
+			        "variable_code": "H26",
+			        "industry_name_nzsioc": "Mining",
+			        "industry_aggregation_nzsioc": "Level 1",
+			        "id": 136012,
+			        "user_data_id": 8,
+			        "data_value": 8197
+			    },
+			    {
+			        "variable_name": "Return on equity",
+			        "units": "Percentage",
+			        "industry_code_nzsioc": "CC",
+			        "data_year": 2021,
+			        "created_time": "2021-01-23 15:53:23.806466",
+			        "industry_code_anzsic06": "ANZSIC06 division C",
+			        "variable_category": "Financial ratios",
+			        "variable_code": "H39",
+			        "industry_name_nzsioc": "Manufacturing",
+			        "industry_aggregation_nzsioc": "Level 1",
+			        "id": 136060,
+			        "user_data_id": 8,
+			        "data_value": 21
+			    },
+			    {
+			        "variable_name": "Return on total assets",
+			        "units": "Percentage",
+			        "industry_code_nzsioc": "CC",
+			        "data_year": 2021,
+			        "created_time": "2021-01-23 15:53:23.806469",
+			        "industry_code_anzsic06": "ANZSIC06 division C",
+			        "variable_category": "Financial ratios",
+			        "variable_code": "H40",
+			        "industry_name_nzsioc": "Manufacturing",
+			        "industry_aggregation_nzsioc": "Level 1",
+			        "id": 136061,
+			        "user_data_id": 8,
+			        "data_value": 10
+			    }
+			]
+
+
+
+
